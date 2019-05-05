@@ -90,6 +90,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="styles\main.css" />
+    <Content Include="styles\style.css" />
     <Content Include="styles\util.css" />
     <Content Include="Web.config" />
   </ItemGroup>
