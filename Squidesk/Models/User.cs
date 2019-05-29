@@ -14,6 +14,18 @@ namespace Squidesk.Models
         public String parola { get; set; }
         public int nrMat { get; set; }
 
-        
+        public User()
+        {
+
+        }
+
+        public User(String u, String n, String p, int nr, String pass)
+        {
+            this.username = u;
+            this.nume = n;
+            this.prenume = p;
+            this.nrMat = nr;
+            this.parola = pass;
+        }
     }
 }

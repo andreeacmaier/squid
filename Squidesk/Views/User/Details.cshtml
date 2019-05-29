@@ -1,0 +1,59 @@
+﻿@model Squidesk.Models.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutRightSideContact.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nume)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prenume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prenume)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.parola)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.parola)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nrMat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nrMat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Verify")
+</p>

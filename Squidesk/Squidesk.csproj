@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="styles\left_side_menu.css" />
     <Content Include="styles\main.css" />
     <Content Include="styles\style.css" />
     <Content Include="styles\util.css" />
@@ -108,8 +109,10 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\_LayoutHeaderLogin.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
-    <Content Include="Views\User\LoggedIn.cshtml" />
     <Content Include="Views\User\Error.cshtml" />
+    <Content Include="Views\Shared\_LayoutRightSideContact.cshtml" />
+    <Content Include="Views\User\Verify.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

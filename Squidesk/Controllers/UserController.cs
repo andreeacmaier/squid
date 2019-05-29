@@ -13,6 +13,7 @@ namespace Squidesk.Controllers
         SqlConnection conn = new SqlConnection();
         SqlCommand com = new SqlCommand();
         SqlDataReader dr;
+        User us;
 
         // GET: User
 
@@ -29,11 +30,18 @@ namespace Squidesk.Controllers
             conn.Open();
             com.Connection = conn;
             com.CommandText = "select * from Users where username='"+user.username+"' and parola='"+user.parola+"' ";
-            dr = com.ExecuteReader();
+            dr = com.ExecuteReader();            
             if (dr.Read())
             {
+                
+                String username = dr.GetString(0);
+                String name = dr.GetString(1);
+                String firstname = dr.GetString(2);
+                String pass = dr.GetString(3);
+                int nr = dr.GetInt32(4);
+                us = new User(username, name, firstname, nr, pass);
                 conn.Close();
-                return View("LoggedIn");
+                return View("Verify", us);
             }
             else
             {
@@ -42,6 +50,14 @@ namespace Squidesk.Controllers
             }
             
         }
+
+        public ActionResult Details()
+        {
+                return View(us);
+        }
+
+
+
 
         private void connectionString()
         {
