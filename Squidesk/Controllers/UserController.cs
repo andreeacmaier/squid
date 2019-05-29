@@ -26,21 +26,13 @@ namespace Squidesk.Controllers
         [HttpPost]
         public ActionResult Verify(User user)
         {
-            connectionString();
-            conn.Open();
-            com.Connection = conn;
-            com.CommandText = "select * from Users where username='"+user.username+"' and parola='"+user.parola+"' ";
-            dr = com.ExecuteReader();            
-            if (dr.Read())
+            User us = null;
+            using (dbconnection db = new dbconnection())
             {
-                
-                String username = dr.GetString(0);
-                String name = dr.GetString(1);
-                String firstname = dr.GetString(2);
-                String pass = dr.GetString(3);
-                int nr = dr.GetInt32(4);
-                us = new User(username, name, firstname, nr, pass);
-                conn.Close();
+                us = db.Users.SingleOrDefault(u => u.username == user.username && u.parola == user.parola);
+            }
+            if (us != null)
+            {
                 return View("Verify", us);
             }
             else
@@ -48,12 +40,12 @@ namespace Squidesk.Controllers
                 conn.Close();
                 return View("Error");
             }
-            
+
         }
 
         public ActionResult Details()
         {
-                return View(us);
+            return View(us);
         }
 
 
@@ -61,7 +53,7 @@ namespace Squidesk.Controllers
 
         private void connectionString()
         {
-            conn.ConnectionString = "Data Source=LAPTOP-BQ5NVT98\\SQLEXPRESS;Initial Catalog=Squidesk;Integrated Security=True;";
+            conn.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = F:\scul\scul3\II\Proj\squid\Squidesk\App_Data\Database1.mdf; Integrated Security = True";
         }
     }
 }
