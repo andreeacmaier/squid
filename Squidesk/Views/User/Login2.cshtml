@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutHeaderLogin.cshtml";
+
+}
+<head>
+    <link href="~/styles/style.css" rel="stylesheet" type="text/css" />
+</head>
+<div id="id01" class="modal">
+    <div class="container">
+        <table>
+            <tr><td><form action="Verify" method="post" " class="login-form">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="parola" required>
+
+            <button type="submit">Login</button>
+            
+        </form></td></tr>
+            <tr><td><label class="errorr";  style=" color: white" >
+    Wrong username or password!
+</label></td></tr></table>
+    </div>
+
+</div>

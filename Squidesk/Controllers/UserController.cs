@@ -16,7 +16,6 @@ namespace Squidesk.Controllers
         User us;
 
         // GET: User
-
         [HttpGet]
         public ActionResult Login()
         {
@@ -38,7 +37,7 @@ namespace Squidesk.Controllers
             else
             {
                 conn.Close();
-                return View("Error");
+                return View("Login2");
             }
 
         }
@@ -53,7 +52,7 @@ namespace Squidesk.Controllers
 
         private void connectionString()
         {
-            conn.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = F:\scul\scul3\II\Proj\squid\Squidesk\App_Data\Database1.mdf; Integrated Security = True";
+            conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mon\Code\squid\Squidesk\App_Data\Database1.mdf;Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30;Application Name=EntityFramework";
         }
     }
 }
