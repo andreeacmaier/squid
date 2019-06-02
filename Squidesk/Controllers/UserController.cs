@@ -48,9 +48,7 @@ namespace Squidesk.Controllers
             return View(us);
         }
 
-
-
-
+        
         private void connectionString()
         {
             conn.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = F:\scul\scul3\II\Proj\squid\Squidesk\App_Data\Database1.mdf; Integrated Security = True";

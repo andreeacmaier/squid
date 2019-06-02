@@ -73,3 +73,4 @@ C:\Squidesk\Squidesk\bin\EntityFramework.xml
 C:\Squidesk\Squidesk\bin\EntityFramework.SqlServer.xml
 C:\Squidesk\Squidesk\bin\DHTMLX.dll
 C:\Squidesk\Squidesk\bin\DHTMLX.xml
+C:\Squidesk\Squidesk\bin\DHTMLX.pdb
