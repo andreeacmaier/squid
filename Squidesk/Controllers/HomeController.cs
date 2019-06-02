@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 using DHTMLX.Scheduler;
-
+using DHTMLX.Scheduler.Data;
 
 namespace Squidesk.Controllers
 {
@@ -18,8 +18,13 @@ namespace Squidesk.Controllers
             sched.Skin = DHXScheduler.Skins.Terrace;
             sched.LoadData = true;
             sched.EnableDataprocessor = true;
-            
+
             return View(sched);
         }
+
+        //public ContentResult Data()
+        //{
+
+        //}
     }
 }

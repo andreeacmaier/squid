@@ -13,6 +13,7 @@
     <EntitySetMapping Name="Labs">
       <EntityTypeMapping TypeName="DbModel.Lab">
         <MappingFragment StoreEntitySet="Labs">
+          <ScalarProperty Name="capacitate" ColumnName="capacitate" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="idMaterie" ColumnName="idMaterie" />
           <ScalarProperty Name="data" ColumnName="data" />

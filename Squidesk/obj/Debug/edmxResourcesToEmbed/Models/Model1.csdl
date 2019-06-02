@@ -20,6 +20,7 @@
     <Property Name="durata" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Appointments" Relationship="Self.FK_Programari_Labs" FromRole="Labs" ToRole="Appointments" />
     <NavigationProperty Name="Subject" Relationship="Self.FK_Labs_Subjects" FromRole="Labs" ToRole="Subjects" />
+    <Property Name="capacitate" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Subject">
     <Key>

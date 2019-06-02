@@ -24,6 +24,7 @@ namespace Squidesk.Models
         public int idMaterie { get; set; }
         public System.DateTime data { get; set; }
         public int durata { get; set; }
+        public int capacitate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment> Appointments { get; set; }
