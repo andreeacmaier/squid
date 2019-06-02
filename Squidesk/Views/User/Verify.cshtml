@@ -1,59 +1,64 @@
 ﻿@model Squidesk.Models.User
-
 @{
     ViewBag.Title = "Verify";
     Layout = "~/Views/Shared/_LayoutRightSideContact.cshtml";
 }
-
 <head>
     <link href="~/styles/left_side_menu.css" rel="stylesheet" type="text/css" />
 </head>
 
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    html, body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Roboto", sans-serif
+    }
+</style>
+<body class="w3-light-grey">
 
-<div class="container">
-    <div class="row profile">
-        <div class="col-md-3">
-            <div class="profile-sidebar">
+    <!-- Page Container -->
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
-                <!-- imagine user -->
-                <div class="profile-userpic">
-                    <img src="#" class="img-responsive" alt="">
-                </div>
+        <!-- The Grid -->
+        <div class="w3-row-padding">
 
-                <!-- date user -->
-                <div class="profile-user">
-                    <div class="profile-user-name">
-                        @Html.DisplayFor(model => model.nume)
-                        @Html.DisplayFor(model => model.prenume)
+            <!-- Left Column -->
+            <div class="w3-third" style="height:100%">
+
+                <div class="w3-white w3-text-grey w3-card-4">
+                    <div class="w3-display-container">
+                        <img src="https://www.w3schools.com/howto/img_avatar2.png" style="width:100%" alt="Avatar">
+                        <div class="w3-display-bottomleft w3-container w3-text-black" >
+                            <h2 style="color:white">
+                                @Html.DisplayFor(model => model.nume)
+                                @Html.DisplayFor(model => model.prenume)
+                            </h2>
+                        </div>
                     </div>
-                    <div class="profile-user-code">
-                        @Html.DisplayFor(model => model.nrMat)
+                    <div class="w3-container">
+                        <ul class="nav" style=" list-style-type: none">
+                            <li class="active">
+                                <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                               @Html.ActionLink("Pagina de contact", "Details", "User")
+                            </li>
+                            <li class="active">
+                                <a href="#">
+                                    <i class="menu-option"></i>
+                                    <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Programari</p>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                      
+                        <br>
                     </div>
-                </div>
-
-
-                <div class="profile-usermenu">
-                    <ul class="nav">
-                        <li class="active">
-                            
-                            @Html.ActionLink("Pagina de contact", "Details", "User")
-
-                        </li>
-                        <li class="active">
-                            <a href="#">
-                                <i class="menu-option"></i>
-                                Programari
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
+                </div><br>
+                <!-- End Left Column -->
             </div>
-        </div>
-
-    </div>
-</div>
-<p>
-    
-</p>
+            </div>
+            </div>
+        </body>

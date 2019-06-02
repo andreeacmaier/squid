@@ -1,59 +1,102 @@
 ﻿@model Squidesk.Models.User
-
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutRightSideContact.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>User</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.username)
-        </dt>
+<head>
+    <link href="~/styles/left_side_menu.css" rel="stylesheet" type="text/css" />
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    html, body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Roboto", sans-serif
+    }
+</style>
+<body class="w3-light-grey">
 
-        <dd>
-            @Html.DisplayFor(model => model.username)
-        </dd>
+    <!-- Page Container -->
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.nume)
-        </dt>
+        <!-- The Grid -->
+        <div class="w3-row-padding">
 
-        <dd>
-            @Html.DisplayFor(model => model.nume)
-        </dd>
+            <!-- Left Column -->
+            <div class="w3-third" style="height:100%">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.prenume)
-        </dt>
+                <div class="w3-white w3-text-grey w3-card-4">
+                    <div class="w3-display-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Logo_Universitatea_Tehnic%C4%83_din_Cluj-Napoca.svg/1280px-Logo_Universitatea_Tehnic%C4%83_din_Cluj-Napoca.svg.png" style="width:100%; padding:20px;" alt="Avatar">
+                        <div class="w3-display-bottomleft w3-container w3-text-black">
+                            <h2></h2>
+                        </div>
+                    </div>
+                    <div class="w3-container">
+                        <ul class="nav" style=" list-style-type: none">
+                            <li class="active">
+                                <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                                @Html.ActionLink("Pagina de contact", "Details", "User")
+                            </li>
+                            <li class="active">
+                                <a href="#">
+                                    <i class="menu-option"></i>
+                                    <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Programari</p>
+                                </a>
+                            </li>
+                        </ul>
 
-        <dd>
-            @Html.DisplayFor(model => model.prenume)
-        </dd>
 
-        @*<dt>
-            @Html.DisplayNameFor(model => model.parola)
-        </dt>
+                        <br>
+                    </div>
+                </div><br>
 
-        <dd>
-            @Html.DisplayFor(model => model.parola)
-        </dd>*@
+                <!-- End Left Column -->
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.nrMat)
-        </dt>
+            <!-- Right Column -->
+            <div class="w3-twothird">
 
-        <dd>
-            @Html.DisplayFor(model => model.nrMat)
-        </dd>
+              
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Verify")
-</p>
+                <div class="w3-container w3-card w3-white w3-margin-bottom">
+                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Adresa</h2>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>Str. Observator Nr: 34</b></h5>
+
+                        <hr>
+                    </div>
+
+                </div>
+
+
+
+                <div class="w3-container w3-card w3-white w3-margin-bottom">
+                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>Numar de telefon</h2>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>07222-33345</b></h5>
+
+
+                        <hr>
+                    </div>
+
+                </div>
+
+                <!-- End Right Column -->
+            </div>
+
+            <!-- End Grid -->
+        </div>
+
+        <!-- End Page Container -->
+    </div>
+
+
+
+</body>
+
+
