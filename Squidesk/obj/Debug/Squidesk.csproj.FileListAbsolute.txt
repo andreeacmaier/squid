@@ -67,3 +67,10 @@ C:\Squidesk\Squidesk\obj\Debug\Squidesk.csproj.CoreCompileInputs.cache
 C:\Squidesk\Squidesk\obj\Debug\Squidesk.csproj.CopyComplete
 C:\Squidesk\Squidesk\obj\Debug\Squidesk.dll
 C:\Squidesk\Squidesk\obj\Debug\Squidesk.pdb
+C:\Squidesk\Squidesk\bin\EntityFramework.dll
+C:\Squidesk\Squidesk\bin\EntityFramework.SqlServer.dll
+C:\Squidesk\Squidesk\bin\EntityFramework.xml
+C:\Squidesk\Squidesk\bin\EntityFramework.SqlServer.xml
+C:\Squidesk\Squidesk\bin\DHTMLX.dll
+C:\Squidesk\Squidesk\bin\DHTMLX.xml
+C:\Squidesk\Squidesk\bin\DHTMLX.pdb

@@ -19,9 +19,9 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="idMaterie" Type="int" Nullable="false" />
-          <Property Name="data" Type="datetime" Nullable="false" />
-          <Property Name="durata" Type="int" Nullable="false" />
-          <Property Name="capacitate" Type="int" Nullable="false" />
+          <Property Name="start_date" Type="datetime" Nullable="false" />
+          <Property Name="end_date" Type="datetime" Nullable="false" />
+          <Property Name="capacitate" Type="int" />
         </EntityType>
         <EntityType Name="Subjects">
           <Key>
@@ -114,11 +114,11 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="idMaterie" Type="Int32" Nullable="false" />
-          <Property Name="data" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="durata" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Appointments" Relationship="Self.FK_Programari_Labs" FromRole="Labs" ToRole="Appointments" />
           <NavigationProperty Name="Subject" Relationship="Self.FK_Labs_Subjects" FromRole="Labs" ToRole="Subjects" />
-          <Property Name="capacitate" Type="Int32" Nullable="false" />
+          <Property Name="capacitate" Type="Int32" />
+          <Property Name="start_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="end_date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="Subject">
           <Key>
@@ -212,11 +212,11 @@
             <EntityTypeMapping TypeName="DbModel.Lab">
               <MappingFragment StoreEntitySet="Labs">
                 <ScalarProperty Name="capacitate" ColumnName="capacitate" />
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="idMaterie" ColumnName="idMaterie" />
-                <ScalarProperty Name="data" ColumnName="data" />
-                <ScalarProperty Name="durata" ColumnName="durata" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Subjects">

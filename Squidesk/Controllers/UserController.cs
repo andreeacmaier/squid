@@ -12,7 +12,7 @@ namespace Squidesk.Controllers
     {
         SqlConnection conn = new SqlConnection();
         SqlCommand com = new SqlCommand();
-        SqlDataReader dr;
+        
         User us;
 
         // GET: User
@@ -32,6 +32,7 @@ namespace Squidesk.Controllers
             }
             if (us != null)
             {
+                Session["user"] = us.username;
                 return View("Verify", us);
             }
             else
@@ -47,9 +48,7 @@ namespace Squidesk.Controllers
             return View(us);
         }
 
-
-
-
+        
         private void connectionString()
         {
             conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mon\Code\squid\Squidesk\App_Data\Database1.mdf;Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30;Application Name=EntityFramework";

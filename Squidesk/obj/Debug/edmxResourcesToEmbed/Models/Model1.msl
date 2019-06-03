@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbModelStoreContainer" CdmEntityContainer="dbconnection">
+    <EntitySetMapping Name="Appointments">
+      <EntityTypeMapping TypeName="DbModel.Appointment">
+        <MappingFragment StoreEntitySet="Appointments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="idLab" ColumnName="idLab" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Labs">
+      <EntityTypeMapping TypeName="DbModel.Lab">
+        <MappingFragment StoreEntitySet="Labs">
+          <ScalarProperty Name="capacitate" ColumnName="capacitate" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="idMaterie" ColumnName="idMaterie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subjects">
+      <EntityTypeMapping TypeName="DbModel.Subject">
+        <MappingFragment StoreEntitySet="Subjects">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nume" ColumnName="nume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DbModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nume" ColumnName="nume" />
+          <ScalarProperty Name="prenume" ColumnName="prenume" />
+          <ScalarProperty Name="parola" ColumnName="parola" />
+          <ScalarProperty Name="nrMat" ColumnName="nrMat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
