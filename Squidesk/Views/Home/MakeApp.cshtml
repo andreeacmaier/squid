@@ -8,55 +8,111 @@
     List<Squidesk.Models.Subject> subs = new Squidesk.Models.dbconnection().Subjects.ToList();
     List<Squidesk.Models.Lab> labs = new Squidesk.Models.dbconnection().Labs.ToList();
 
+}
+
+<head>
+    <link href="~/styles/left_side_menu.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    html, body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Roboto", sans-serif
     }
+</style>
+<body class="w3-light-grey">
+
+    <!-- Page Container -->
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+        <!-- The Grid -->
+        <div class="w3-row-padding">
+
+            <!-- Left Column -->
+            <div class="w3-third" style="height:100%">
+
+                <div class="w3-white w3-text-grey w3-card-4">
+                    <div class="w3-display-container">
+                        <img src="https://www.w3schools.com/howto/img_avatar2.png" style="width:100%" alt="Avatar">
+                        <div class="w3-display-bottomleft w3-container w3-text-black">
+                            <h2 style="color:white">
+                                @Html.DisplayFor(model => Session["user"])
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="w3-container">
+                        <ul class="nav" style=" list-style-type: none">
+                            <li class="active">
+                                <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                                @Html.ActionLink("Pagina de contact", "Details", "User")
+                            </li>
+                            <li class="active">
+                                <a href="#">
+                                    <i class="menu-option"></i>
+                                    <p>
+                                        <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                                        @Html.ActionLink("Programari", "Index", "Home")
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                                @Html.ActionLink("Creeaza programare", "MakeApp", "Home")
+                            </li>
+                        </ul>
 
 
-<h2>MakeApp</h2>
-<body>
-    <div>
-        @foreach (var item in Model.LabModel)
-        {
-            <table>
-                <tr >
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Subject.nume)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.start_date)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.end_date) <br />
-                    </td>
-                    <td>
-                        @Html.ActionLink("Programare", "Progr", "Home", new { Id = item.Id }, null)
-                    </td>
+                        <br>
+                    </div>
+                </div><br>
+                <!-- End Left Column -->
+            </div>
+            <!-- Right Column -->
+            <div class="w3-twothird">
 
 
-                </tr>
-            </table>
-        }
 
-        <text> @Html.DisplayFor(model => Model.errorMessage)</text>
+                <div class="w3-container w3-card w3-white w3-margin-bottom">
+                     <div>
+                        @foreach (var item in Model.LabModel)
+                        {
+                            <table>
+                                <tr>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Subject.nume)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.start_date)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.end_date) <br />
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Programare", "Progr", "Home", new { Id = item.Id }, null)
+                                    </td>
 
 
-    </div>
+                                </tr>
+                            </table>
+                        }
 
-    
-    @*<script language="javascript" type="text/javascript">
-        function AddTo(id) {
-            $.ajax({
-                url: @Url.Action("Progr","Home", id),
-                method: 'GET'
-                
-            }).done(function () {
-                alert('Added');
-            });
-        }
-    </script>*@
-    
+                        <text> @Html.DisplayFor(model => Model.errorMessage)</text>
+
+
+                    </div>
+
+                </div>
+
+                <!-- End Right Column -->
+            </div>
+        </div>
 </body>
-
 
 
 

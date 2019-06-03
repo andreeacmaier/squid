@@ -1,4 +1,4 @@
-
+﻿
 ﻿@model Squidesk.Models.User
 @{
     ViewBag.Title = "Verify";
@@ -35,8 +35,7 @@
                         <img src="https://www.w3schools.com/howto/img_avatar2.png" style="width:100%" alt="Avatar">
                         <div class="w3-display-bottomleft w3-container w3-text-black" >
                             <h2 style="color:white">
-                                @Html.DisplayFor(model => model.nume)
-                                @Html.DisplayFor(model => model.prenume)
+                                @Html.DisplayFor(model => Session["user"])
                             </h2>
                         </div>
                     </div>
@@ -49,7 +48,10 @@
                             <li class="active">
                                 <a href="#">
                                     <i class="menu-option"></i>
-                                    <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Programari</p>
+                                    <p>
+                                        <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                                        @Html.ActionLink("Programari", "Index", "Home")
+                                    </p>
                                 </a>
                             </li>
 							<li class="active">
