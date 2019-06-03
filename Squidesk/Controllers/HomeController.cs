@@ -27,59 +27,56 @@ namespace Squidesk.Controllers
             return View(sched);
         }
 
-        //public ContentResult Data()
-        //{
+      public ActionResult MakeApp()
+        {
+            CommonApp common = new CommonApp(new dbconnection().Labs.ToList());
+            common.username = (string)Session["user"];
 
-        //}
 
-        //public ContentResult Data()
-        //{
-        //    //var data = new SchedulerAjaxData((new dbconnection()).Appointments);
-        //    //return Content(data.Render(eventRenderer));
-        //}
+            return View(common);
+        }
 
-        //public void eventRenderer(System.Text.StringBuilder builder, object ev)
-        //{
-        //    var item = ev as Appointment;
-        //    builder.Append(
-        //        string.Format(":{0}, text:\"{1}\", start_date:\"{2:MM/dd/yyyy HH:mm}\", end_date:\"{3:MM/dd/yyyy HH:mm}\"",
-        //        item.Id,
-        //        HttpUtility.JavaScriptStringEncode(item.Lab.Subject.nume),
-        //        item.Lab.start_date,
-        //        item.Lab.end_date)
-        //    );
-        //}
-        //public ContentResult Save(int? id, FormCollection actionValues)
-        //{
-        //    var action = new DataAction(actionValues);
-        //    var changedEvent = DHXEventsHelper.Bind<Appointment>(actionValues);
-        //    var entities = new dbconnection();
-        //    try
-        //    {
-        //        switch (action.Type)
-        //        {
-        //            case DataActionTypes.Insert:
-        //                entities.Appointments.Add(changedEvent);
-        //                break;
-        //            case DataActionTypes.Delete:
-        //                changedEvent = entities.Appointments.FirstOrDefault(ev => ev.Id == action.SourceId);
-        //                entities.Appointments.Remove(changedEvent);
-        //                break;
-        //            default:// "update"
-        //                var target = entities.Appointments.Single(e => e.Id == changedEvent.Id);
-        //                DHXEventsHelper.Update(target, changedEvent, new List<string> { "Id" });
-        //                break;
-        //        }
-        //        entities.SaveChanges();
-        //        action.TargetId = changedEvent.Id;
-        //    }
-        //    catch (Exception a)
-        //    {
-        //        action.Type = DataActionTypes.Error;
-        //    }
 
-        //    return (new AjaxSaveResponse(action));
-        //}
+        public ActionResult Progr(String Id)
+        {
+            CommonApp common = new CommonApp(new dbconnection().Labs.ToList());
+            string username = (string)Session["user"];
+            int ID = int.Parse(Id);
+            List<Appointment> apps = new dbconnection().Appointments.Where(a => a.username == username && a.idLab == ID).ToList();
+            if (apps.Any())
+            {
+                common.errorMessage = "Deja esti programat la aceasta activitate";
+                
+            }
+            else
+             {
+                using (dbconnection db = new dbconnection())
+                {
+                    if (db.Labs.Where(a => a.Id == ID).First().capacitate > 0)
+                    {
+                        db.Labs.Where(a => a.Id == ID).First().capacitate--;
+                        int newId = db.Appointments.Max(a => a.Id) + 1;
+                        db.Appointments.Add(new Appointment()
+                        {
+                            Id = newId,
+                            idLab = ID,
+                            username = username
+                        });
+                        common.errorMessage = "Programare efectuata";
+                    } else
+                    {
+                        common.errorMessage = "Nu mai exista locuri";
+                    }
+                    db.SaveChanges();
+                }
+            }
+
+            return View("MakeApp",common);
+        }
+
+       
+
+        
 
     }
 }

@@ -342,6 +342,8 @@
     <Compile Include="Models\Appointment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CalendarEvent.cs" />
+    <Compile Include="Models\CommonApp.cs" />
     <Compile Include="Models\Lab.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -386,6 +388,7 @@
     <Content Include="Views\User\Verify.cshtml" />
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\MakeApp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

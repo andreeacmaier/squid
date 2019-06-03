@@ -14,9 +14,9 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="idMaterie" Type="int" Nullable="false" />
-    <Property Name="data" Type="datetime" Nullable="false" />
-    <Property Name="durata" Type="int" Nullable="false" />
-    <Property Name="capacitate" Type="int" Nullable="false" />
+    <Property Name="start_date" Type="datetime" Nullable="false" />
+    <Property Name="end_date" Type="datetime" Nullable="false" />
+    <Property Name="capacitate" Type="int" />
   </EntityType>
   <EntityType Name="Subjects">
     <Key>

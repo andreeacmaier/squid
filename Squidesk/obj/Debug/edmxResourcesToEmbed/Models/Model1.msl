@@ -14,10 +14,10 @@
       <EntityTypeMapping TypeName="DbModel.Lab">
         <MappingFragment StoreEntitySet="Labs">
           <ScalarProperty Name="capacitate" ColumnName="capacitate" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="idMaterie" ColumnName="idMaterie" />
-          <ScalarProperty Name="data" ColumnName="data" />
-          <ScalarProperty Name="durata" ColumnName="durata" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,0 +1,64 @@
+﻿
+@model Squidesk.Models.CommonApp
+
+@{
+    ViewBag.Title = "MakeApp";
+    Layout = "~/Views/Shared/_LayoutHeaderLogin.cshtml";
+
+    List<Squidesk.Models.Subject> subs = new Squidesk.Models.dbconnection().Subjects.ToList();
+    List<Squidesk.Models.Lab> labs = new Squidesk.Models.dbconnection().Labs.ToList();
+
+    }
+
+
+<h2>MakeApp</h2>
+<body>
+    <div>
+        @foreach (var item in Model.LabModel)
+        {
+            <table>
+                <tr >
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject.nume)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.start_date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.end_date) <br />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Programare", "Progr", "Home", new { Id = item.Id }, null)
+                    </td>
+
+
+                </tr>
+            </table>
+        }
+
+        <text> @Html.DisplayFor(model => Model.errorMessage)</text>
+
+
+    </div>
+
+    
+    @*<script language="javascript" type="text/javascript">
+        function AddTo(id) {
+            $.ajax({
+                url: @Url.Action("Progr","Home", id),
+                method: 'GET'
+                
+            }).done(function () {
+                alert('Added');
+            });
+        }
+    </script>*@
+    
+</body>
+
+
+
+
+
+

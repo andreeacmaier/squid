@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Squidesk",
+    "\\Squidesk\\Controllers",
     "\\Squidesk\\Models",
     "\\Squidesk\\Repository"
   ],
-  "SelectedNode": "\\Squidesk\\Repository\\Squidesk_log.ldf",
+  "SelectedNode": "\\Squidesk\\Models\\Model1.edmx",
   "PreviewInSolutionExplorer": false
 }

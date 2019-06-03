@@ -12,7 +12,7 @@ namespace Squidesk.Controllers
     {
         SqlConnection conn = new SqlConnection();
         SqlCommand com = new SqlCommand();
-        SqlDataReader dr;
+        
         User us;
 
         // GET: User
@@ -33,6 +33,7 @@ namespace Squidesk.Controllers
             }
             if (us != null)
             {
+                Session["user"] = us.username;
                 return View("Verify", us);
             }
             else
